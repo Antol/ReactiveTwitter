@@ -14,6 +14,9 @@
 		5A92C8251DC90632006F5540 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A92C8231DC90632006F5540 /* Main.storyboard */; };
 		5A92C8271DC90632006F5540 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A92C8261DC90632006F5540 /* Assets.xcassets */; };
 		5A92C82A1DC90632006F5540 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A92C8281DC90632006F5540 /* LaunchScreen.storyboard */; };
+		5A9E1D5A1DCA5F9F00318F48 /* TweetsListLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1D591DCA5F9F00318F48 /* TweetsListLogic.m */; };
+		5A9E1D5D1DCA603500318F48 /* BaseLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1D5C1DCA603500318F48 /* BaseLogic.m */; };
+		5A9E1D601DCA606400318F48 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1D5F1DCA606400318F48 /* BaseVC.m */; };
 		BF8E376A7D70A84E051EDA21 /* libPods-ReactiveTwitter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BAF3DFA841E64D4B3F1CAD7 /* libPods-ReactiveTwitter.a */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +35,12 @@
 		5A92C8261DC90632006F5540 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ReactiveTwitter/Assets.xcassets; sourceTree = "<group>"; };
 		5A92C8291DC90632006F5540 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A92C82B1DC90632006F5540 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A9E1D581DCA5F9F00318F48 /* TweetsListLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetsListLogic.h; sourceTree = "<group>"; };
+		5A9E1D591DCA5F9F00318F48 /* TweetsListLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetsListLogic.m; sourceTree = "<group>"; };
+		5A9E1D5B1DCA603500318F48 /* BaseLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLogic.h; sourceTree = "<group>"; };
+		5A9E1D5C1DCA603500318F48 /* BaseLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLogic.m; sourceTree = "<group>"; };
+		5A9E1D5E1DCA606400318F48 /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
+		5A9E1D5F1DCA606400318F48 /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
 		9BAF3DFA841E64D4B3F1CAD7 /* libPods-ReactiveTwitter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactiveTwitter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -58,6 +67,8 @@
 		5A0552F81DCA57EC00D99C45 /* VIews */ = {
 			isa = PBXGroup;
 			children = (
+				5A9E1D5E1DCA606400318F48 /* BaseVC.h */,
+				5A9E1D5F1DCA606400318F48 /* BaseVC.m */,
 				5A92C8231DC90632006F5540 /* Main.storyboard */,
 				5A92C8201DC90632006F5540 /* TweetsListVC.h */,
 				5A92C8211DC90632006F5540 /* TweetsListVC.m */,
@@ -97,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				5A0552F91DCA584400D99C45 /* Services */,
+				5A9E1D571DCA5F4900318F48 /* Logics */,
 				5A0552F81DCA57EC00D99C45 /* VIews */,
 				5A92C81A1DC90632006F5540 /* Supporting Files */,
 			);
@@ -113,6 +125,17 @@
 				5A92C81B1DC90632006F5540 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5A9E1D571DCA5F4900318F48 /* Logics */ = {
+			isa = PBXGroup;
+			children = (
+				5A9E1D5B1DCA603500318F48 /* BaseLogic.h */,
+				5A9E1D5C1DCA603500318F48 /* BaseLogic.m */,
+				5A9E1D581DCA5F9F00318F48 /* TweetsListLogic.h */,
+				5A9E1D591DCA5F9F00318F48 /* TweetsListLogic.m */,
+			);
+			name = Logics;
 			sourceTree = "<group>";
 		};
 		FF9FF5F29E60AE2715993954 /* Pods */ = {
@@ -261,9 +284,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A9E1D601DCA606400318F48 /* BaseVC.m in Sources */,
 				5A92C8221DC90632006F5540 /* TweetsListVC.m in Sources */,
 				5A92C81F1DC90632006F5540 /* AppDelegate.m in Sources */,
 				5A0552FC1DCA58D100D99C45 /* TwitterApiClient.m in Sources */,
+				5A9E1D5D1DCA603500318F48 /* BaseLogic.m in Sources */,
+				5A9E1D5A1DCA5F9F00318F48 /* TweetsListLogic.m in Sources */,
 				5A92C81C1DC90632006F5540 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

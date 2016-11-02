@@ -1,5 +1,5 @@
 //
-//  TweeterApiClient.h
+//  BaseVC.h
 //  ReactiveTwitter
 //
 //  Created by Anatoliy Peshkov on 02/11/2016.
@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "ReactiveCocoa.h"
+@class BaseLogic;
 
-@interface TwitterApiClient : NSObject
-- (RACSignal *)login;
-- (RACSignal *)loadTimeline;
+@interface BaseVC : UIViewController
+@property (strong, nonatomic) BaseLogic *logic;
+
+- (void)setupUI NS_REQUIRES_SUPER;
+- (void)bindUIWithLogics NS_REQUIRES_SUPER;
 @end

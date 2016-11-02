@@ -11,6 +11,7 @@
 #import <TwitterKit/TwitterKit.h>
 #import "TweetsListVC.h"
 #import "TwitterApiClient.h"
+#import "TweetsListLogic.h"
 
 @interface AppDelegate ()
 
@@ -28,7 +29,10 @@
 - (void)injection {
     TweetsListVC *rootVC = (id)self.window.rootViewController;
     NSAssert([rootVC isKindOfClass:[TweetsListVC class]], @"[rootVC isKindOfClass:[TweetsListVC class]]");
-    rootVC.twitterApiClient = [TwitterApiClient new];
+    
+    TweetsListLogic *rootLogic = [TweetsListLogic new];
+    rootLogic.twitterApiClient = [TwitterApiClient new];
+    rootVC.logic = rootLogic;    
 }
 
 @end

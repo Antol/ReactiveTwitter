@@ -8,30 +8,47 @@
 
 #import "TweetsListVC.h"
 #import "ReactiveCocoa.h"
-#import "TwitterApiClient.h"
+#import "TweetsListLogic.h"
 
-@interface TweetsListVC ()
+static NSString * const kTweetCellReuseId = @"TweetCell";
 
+@interface TweetsListVC () <UITableViewDelegate, UITableViewDataSource>
+@property (nonatomic, strong) TweetsListLogic *logic;
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, copy) NSArray *tweets;
 @end
 
 @implementation TweetsListVC
+@dynamic logic;
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self loadData];
+- (void)setupUI {
+    [super setupUI];
 }
 
-- (void)loadData {
+- (void)bindUIWithLogics {
+    [super bindUIWithLogics];
     @weakify(self);
-    [[[self.twitterApiClient
-        login]
-        then:^RACSignal *{
-            @strongify(self)
-            return [self.twitterApiClient loadTimeline];
-        }]
-        subscribeNext:^(id x) {
-            NSLog(@"================> %@", x);
-        }];
+    
+    RAC(self, tweets) = RACObserve(self.logic, tweets);
+    
+    [RACObserve(self, tweets) subscribeNext:^(id x) {
+        @strongify(self);
+        [self.tableView reloadData];
+    }];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.tweets.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kTweetCellReuseId
+                                                            forIndexPath:indexPath];
+    cell.textLabel.text = self.tweets[indexPath.row];
+    return cell;
 }
 
 @end
+
+
+
