@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+@class TwitterApiClient;
 
-@interface ViewController : UIViewController
-
-
+@interface TweetsListVC : UIViewController
+@property (nonatomic, strong) TwitterApiClient *twitterApiClient;
 @end
 

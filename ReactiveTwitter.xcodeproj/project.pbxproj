@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A0552FC1DCA58D100D99C45 /* TwitterApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0552FB1DCA58D100D99C45 /* TwitterApiClient.m */; };
 		5A92C81C1DC90632006F5540 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92C81B1DC90632006F5540 /* main.m */; };
 		5A92C81F1DC90632006F5540 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92C81E1DC90632006F5540 /* AppDelegate.m */; };
-		5A92C8221DC90632006F5540 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92C8211DC90632006F5540 /* ViewController.m */; };
+		5A92C8221DC90632006F5540 /* TweetsListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92C8211DC90632006F5540 /* TweetsListVC.m */; };
 		5A92C8251DC90632006F5540 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A92C8231DC90632006F5540 /* Main.storyboard */; };
 		5A92C8271DC90632006F5540 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A92C8261DC90632006F5540 /* Assets.xcassets */; };
 		5A92C82A1DC90632006F5540 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A92C8281DC90632006F5540 /* LaunchScreen.storyboard */; };
@@ -19,14 +20,16 @@
 /* Begin PBXFileReference section */
 		0BCC5D657C7CFBF3231B620C /* Pods-ReactiveTwitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveTwitter.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveTwitter/Pods-ReactiveTwitter.release.xcconfig"; sourceTree = "<group>"; };
 		396F9F147AA61B39BD6AB735 /* Pods-ReactiveTwitter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveTwitter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveTwitter/Pods-ReactiveTwitter.debug.xcconfig"; sourceTree = "<group>"; };
+		5A0552FA1DCA58D100D99C45 /* TwitterApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterApiClient.h; sourceTree = "<group>"; };
+		5A0552FB1DCA58D100D99C45 /* TwitterApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterApiClient.m; sourceTree = "<group>"; };
 		5A92C8171DC90632006F5540 /* ReactiveTwitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactiveTwitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A92C81B1DC90632006F5540 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5A92C81D1DC90632006F5540 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5A92C81E1DC90632006F5540 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5A92C8201DC90632006F5540 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5A92C8211DC90632006F5540 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5A92C8201DC90632006F5540 /* TweetsListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TweetsListVC.h; sourceTree = "<group>"; };
+		5A92C8211DC90632006F5540 /* TweetsListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TweetsListVC.m; sourceTree = "<group>"; };
 		5A92C8241DC90632006F5540 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5A92C8261DC90632006F5540 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5A92C8261DC90632006F5540 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ReactiveTwitter/Assets.xcassets; sourceTree = "<group>"; };
 		5A92C8291DC90632006F5540 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A92C82B1DC90632006F5540 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BAF3DFA841E64D4B3F1CAD7 /* libPods-ReactiveTwitter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactiveTwitter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,10 +55,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5A0552F81DCA57EC00D99C45 /* VIews */ = {
+			isa = PBXGroup;
+			children = (
+				5A92C8231DC90632006F5540 /* Main.storyboard */,
+				5A92C8201DC90632006F5540 /* TweetsListVC.h */,
+				5A92C8211DC90632006F5540 /* TweetsListVC.m */,
+			);
+			name = VIews;
+			sourceTree = "<group>";
+		};
+		5A0552F91DCA584400D99C45 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5A0552FA1DCA58D100D99C45 /* TwitterApiClient.h */,
+				5A0552FB1DCA58D100D99C45 /* TwitterApiClient.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		5A92C80E1DC90632006F5540 = {
 			isa = PBXGroup;
 			children = (
 				5A92C8191DC90632006F5540 /* ReactiveTwitter */,
+				5A92C8261DC90632006F5540 /* Assets.xcassets */,
 				5A92C8181DC90632006F5540 /* Products */,
 				FF9FF5F29E60AE2715993954 /* Pods */,
 				2D4B907F75A3E4FE7B353FB4 /* Frameworks */,
@@ -73,14 +96,8 @@
 		5A92C8191DC90632006F5540 /* ReactiveTwitter */ = {
 			isa = PBXGroup;
 			children = (
-				5A92C81D1DC90632006F5540 /* AppDelegate.h */,
-				5A92C81E1DC90632006F5540 /* AppDelegate.m */,
-				5A92C8201DC90632006F5540 /* ViewController.h */,
-				5A92C8211DC90632006F5540 /* ViewController.m */,
-				5A92C8231DC90632006F5540 /* Main.storyboard */,
-				5A92C8261DC90632006F5540 /* Assets.xcassets */,
-				5A92C8281DC90632006F5540 /* LaunchScreen.storyboard */,
-				5A92C82B1DC90632006F5540 /* Info.plist */,
+				5A0552F91DCA584400D99C45 /* Services */,
+				5A0552F81DCA57EC00D99C45 /* VIews */,
 				5A92C81A1DC90632006F5540 /* Supporting Files */,
 			);
 			path = ReactiveTwitter;
@@ -89,6 +106,10 @@
 		5A92C81A1DC90632006F5540 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5A92C81D1DC90632006F5540 /* AppDelegate.h */,
+				5A92C81E1DC90632006F5540 /* AppDelegate.m */,
+				5A92C8281DC90632006F5540 /* LaunchScreen.storyboard */,
+				5A92C82B1DC90632006F5540 /* Info.plist */,
 				5A92C81B1DC90632006F5540 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -240,8 +261,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A92C8221DC90632006F5540 /* ViewController.m in Sources */,
+				5A92C8221DC90632006F5540 /* TweetsListVC.m in Sources */,
 				5A92C81F1DC90632006F5540 /* AppDelegate.m in Sources */,
+				5A0552FC1DCA58D100D99C45 /* TwitterApiClient.m in Sources */,
 				5A92C81C1DC90632006F5540 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

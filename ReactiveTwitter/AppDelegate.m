@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
+#import "TweetsListVC.h"
+#import "TwitterApiClient.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +20,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [Fabric with:@[[Twitter class]]];
+    
+    [self injection];
     return YES;
+}
+
+- (void)injection {
+    TweetsListVC *rootVC = (id)self.window.rootViewController;
+    NSAssert([rootVC isKindOfClass:[TweetsListVC class]], @"[rootVC isKindOfClass:[TweetsListVC class]]");
+    rootVC.twitterApiClient = [TwitterApiClient new];
 }
 
 @end
