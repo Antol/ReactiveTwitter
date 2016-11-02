@@ -9,4 +9,5 @@ target 'ReactiveTwitter' do
   pod 'Fabric'
   pod 'TwitterKit'
   pod 'TwitterCore'
+  pod 'Masonry'
 end

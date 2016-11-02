@@ -10,6 +10,9 @@
 #import "ReactiveCocoa.h"
 
 @interface BaseLogic : NSObject
+@property (nonatomic, assign, readonly) BOOL isDataLoaded;
+@property (nonatomic, strong, readonly) RACCommand *loadDataCommand;
+
 - (void)startLogic NS_REQUIRES_SUPER;
 - (void)stopLogic NS_REQUIRES_SUPER;
 

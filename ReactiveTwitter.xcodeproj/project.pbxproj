@@ -17,6 +17,9 @@
 		5A9E1D5A1DCA5F9F00318F48 /* TweetsListLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1D591DCA5F9F00318F48 /* TweetsListLogic.m */; };
 		5A9E1D5D1DCA603500318F48 /* BaseLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1D5C1DCA603500318F48 /* BaseLogic.m */; };
 		5A9E1D601DCA606400318F48 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1D5F1DCA606400318F48 /* BaseVC.m */; };
+		5A9E1D641DCA6DFD00318F48 /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1D631DCA6DFD00318F48 /* LoadingView.m */; };
+		5A9E1D661DCA6E0900318F48 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A9E1D651DCA6E0900318F48 /* LoadingView.xib */; };
+		5A9E1D6A1DCA6E7300318F48 /* UIView+PMNibManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1D691DCA6E7300318F48 /* UIView+PMNibManagement.m */; };
 		BF8E376A7D70A84E051EDA21 /* libPods-ReactiveTwitter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BAF3DFA841E64D4B3F1CAD7 /* libPods-ReactiveTwitter.a */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +44,11 @@
 		5A9E1D5C1DCA603500318F48 /* BaseLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLogic.m; sourceTree = "<group>"; };
 		5A9E1D5E1DCA606400318F48 /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
 		5A9E1D5F1DCA606400318F48 /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
+		5A9E1D621DCA6DFD00318F48 /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
+		5A9E1D631DCA6DFD00318F48 /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingView.m; sourceTree = "<group>"; };
+		5A9E1D651DCA6E0900318F48 /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		5A9E1D681DCA6E7300318F48 /* UIView+PMNibManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PMNibManagement.h"; sourceTree = "<group>"; };
+		5A9E1D691DCA6E7300318F48 /* UIView+PMNibManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PMNibManagement.m"; sourceTree = "<group>"; };
 		9BAF3DFA841E64D4B3F1CAD7 /* libPods-ReactiveTwitter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactiveTwitter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -64,7 +72,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5A0552F81DCA57EC00D99C45 /* VIews */ = {
+		5A0552F81DCA57EC00D99C45 /* VIewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				5A9E1D5E1DCA606400318F48 /* BaseVC.h */,
@@ -73,7 +81,7 @@
 				5A92C8201DC90632006F5540 /* TweetsListVC.h */,
 				5A92C8211DC90632006F5540 /* TweetsListVC.m */,
 			);
-			name = VIews;
+			name = VIewControllers;
 			sourceTree = "<group>";
 		};
 		5A0552F91DCA584400D99C45 /* Services */ = {
@@ -109,7 +117,9 @@
 			children = (
 				5A0552F91DCA584400D99C45 /* Services */,
 				5A9E1D571DCA5F4900318F48 /* Logics */,
-				5A0552F81DCA57EC00D99C45 /* VIews */,
+				5A0552F81DCA57EC00D99C45 /* VIewControllers */,
+				5A9E1D611DCA6DD200318F48 /* Views */,
+				5A9E1D671DCA6E4D00318F48 /* Helpers */,
 				5A92C81A1DC90632006F5540 /* Supporting Files */,
 			);
 			path = ReactiveTwitter;
@@ -136,6 +146,25 @@
 				5A9E1D591DCA5F9F00318F48 /* TweetsListLogic.m */,
 			);
 			name = Logics;
+			sourceTree = "<group>";
+		};
+		5A9E1D611DCA6DD200318F48 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5A9E1D621DCA6DFD00318F48 /* LoadingView.h */,
+				5A9E1D631DCA6DFD00318F48 /* LoadingView.m */,
+				5A9E1D651DCA6E0900318F48 /* LoadingView.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		5A9E1D671DCA6E4D00318F48 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5A9E1D681DCA6E7300318F48 /* UIView+PMNibManagement.h */,
+				5A9E1D691DCA6E7300318F48 /* UIView+PMNibManagement.m */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		FF9FF5F29E60AE2715993954 /* Pods */ = {
@@ -211,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A92C82A1DC90632006F5540 /* LaunchScreen.storyboard in Resources */,
+				5A9E1D661DCA6E0900318F48 /* LoadingView.xib in Resources */,
 				5A92C8271DC90632006F5540 /* Assets.xcassets in Resources */,
 				5A92C8251DC90632006F5540 /* Main.storyboard in Resources */,
 			);
@@ -285,10 +315,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A9E1D601DCA606400318F48 /* BaseVC.m in Sources */,
+				5A9E1D641DCA6DFD00318F48 /* LoadingView.m in Sources */,
 				5A92C8221DC90632006F5540 /* TweetsListVC.m in Sources */,
 				5A92C81F1DC90632006F5540 /* AppDelegate.m in Sources */,
 				5A0552FC1DCA58D100D99C45 /* TwitterApiClient.m in Sources */,
 				5A9E1D5D1DCA603500318F48 /* BaseLogic.m in Sources */,
+				5A9E1D6A1DCA6E7300318F48 /* UIView+PMNibManagement.m in Sources */,
 				5A9E1D5A1DCA5F9F00318F48 /* TweetsListLogic.m in Sources */,
 				5A92C81C1DC90632006F5540 /* main.m in Sources */,
 			);
