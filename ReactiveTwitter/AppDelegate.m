@@ -9,9 +9,11 @@
 #import "AppDelegate.h"
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
+
 #import "TweetsListVC.h"
 #import "TwitterApiClient.h"
 #import "TweetsListLogic.h"
+#import "StorageService.h"
 
 @interface AppDelegate ()
 
@@ -32,6 +34,7 @@
     
     TweetsListLogic *rootLogic = [TweetsListLogic new];
     rootLogic.twitterApiClient = [TwitterApiClient new];
+    rootLogic.storageService = [StorageService new];
     rootVC.logic = rootLogic;    
 }
 

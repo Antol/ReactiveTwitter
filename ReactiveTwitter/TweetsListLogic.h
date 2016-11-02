@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "BaseLogic.h"
 @class TwitterApiClient;
+@class StorageService;
 
 @interface TweetsListLogic : BaseLogic
 @property (nonatomic, strong) TwitterApiClient *twitterApiClient;
+@property (nonatomic, strong) StorageService *storageService;
 
 @property (nonatomic, copy, readonly) NSArray *tweets;
 @end

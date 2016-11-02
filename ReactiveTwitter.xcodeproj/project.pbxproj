@@ -20,6 +20,8 @@
 		5A9E1D641DCA6DFD00318F48 /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1D631DCA6DFD00318F48 /* LoadingView.m */; };
 		5A9E1D661DCA6E0900318F48 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A9E1D651DCA6E0900318F48 /* LoadingView.xib */; };
 		5A9E1D6A1DCA6E7300318F48 /* UIView+PMNibManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1D691DCA6E7300318F48 /* UIView+PMNibManagement.m */; };
+		5A9E1D6E1DCA75EB00318F48 /* TweetPersistent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1D6D1DCA75EB00318F48 /* TweetPersistent.m */; };
+		5A9E1D711DCA771200318F48 /* StorageService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1D701DCA771200318F48 /* StorageService.m */; };
 		BF8E376A7D70A84E051EDA21 /* libPods-ReactiveTwitter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BAF3DFA841E64D4B3F1CAD7 /* libPods-ReactiveTwitter.a */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,10 @@
 		5A9E1D651DCA6E0900318F48 /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		5A9E1D681DCA6E7300318F48 /* UIView+PMNibManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PMNibManagement.h"; sourceTree = "<group>"; };
 		5A9E1D691DCA6E7300318F48 /* UIView+PMNibManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PMNibManagement.m"; sourceTree = "<group>"; };
+		5A9E1D6C1DCA75EB00318F48 /* TweetPersistent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetPersistent.h; sourceTree = "<group>"; };
+		5A9E1D6D1DCA75EB00318F48 /* TweetPersistent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetPersistent.m; sourceTree = "<group>"; };
+		5A9E1D6F1DCA771200318F48 /* StorageService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageService.h; sourceTree = "<group>"; };
+		5A9E1D701DCA771200318F48 /* StorageService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageService.m; sourceTree = "<group>"; };
 		9BAF3DFA841E64D4B3F1CAD7 /* libPods-ReactiveTwitter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactiveTwitter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -89,6 +95,8 @@
 			children = (
 				5A0552FA1DCA58D100D99C45 /* TwitterApiClient.h */,
 				5A0552FB1DCA58D100D99C45 /* TwitterApiClient.m */,
+				5A9E1D6F1DCA771200318F48 /* StorageService.h */,
+				5A9E1D701DCA771200318F48 /* StorageService.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -116,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				5A0552F91DCA584400D99C45 /* Services */,
+				5A9E1D6B1DCA742000318F48 /* Models */,
 				5A9E1D571DCA5F4900318F48 /* Logics */,
 				5A0552F81DCA57EC00D99C45 /* VIewControllers */,
 				5A9E1D611DCA6DD200318F48 /* Views */,
@@ -165,6 +174,15 @@
 				5A9E1D691DCA6E7300318F48 /* UIView+PMNibManagement.m */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		5A9E1D6B1DCA742000318F48 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5A9E1D6C1DCA75EB00318F48 /* TweetPersistent.h */,
+				5A9E1D6D1DCA75EB00318F48 /* TweetPersistent.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		FF9FF5F29E60AE2715993954 /* Pods */ = {
@@ -317,7 +335,9 @@
 				5A9E1D601DCA606400318F48 /* BaseVC.m in Sources */,
 				5A9E1D641DCA6DFD00318F48 /* LoadingView.m in Sources */,
 				5A92C8221DC90632006F5540 /* TweetsListVC.m in Sources */,
+				5A9E1D711DCA771200318F48 /* StorageService.m in Sources */,
 				5A92C81F1DC90632006F5540 /* AppDelegate.m in Sources */,
+				5A9E1D6E1DCA75EB00318F48 /* TweetPersistent.m in Sources */,
 				5A0552FC1DCA58D100D99C45 /* TwitterApiClient.m in Sources */,
 				5A9E1D5D1DCA603500318F48 /* BaseLogic.m in Sources */,
 				5A9E1D6A1DCA6E7300318F48 /* UIView+PMNibManagement.m in Sources */,
