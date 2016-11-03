@@ -17,7 +17,7 @@
         NSError *realmError;
         RLMRealm *realm = [RLMRealm defaultRealm];
         BOOL sucsess = [realm transactionWithBlock:^{
-            [realm addObjects:tweets];
+            [realm addOrUpdateObjectsFromArray:tweets];
         } error:&realmError];
         
         if (sucsess) {

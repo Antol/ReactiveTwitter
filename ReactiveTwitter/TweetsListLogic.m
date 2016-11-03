@@ -44,7 +44,7 @@ static NSString * const kTweetsListVCToTweetVC = @"toTweetVC";
 
 - (RACSignal *)loadData {
     @weakify(self);
-    return [[[[[[[[[[[[self.twitterApiClient
+    return [[[[[[[[[[[[[self.twitterApiClient
         login]
         then:^RACSignal *{
             @strongify(self)
@@ -60,6 +60,10 @@ static NSString * const kTweetsListVCToTweetVC = @"toTweetVC";
         flattenMap:^RACStream *(id x) {
             @strongify(self);
             return [self.storageService saveTweets:x];
+        }]
+        then:^RACSignal *{
+            @strongify(self)
+            return [self.storageService loadTweets];
         }]
         catch:^RACSignal *(NSError *error) {
             @strongify(self)

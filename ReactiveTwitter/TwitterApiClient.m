@@ -54,7 +54,7 @@ static NSString * const kTwitterApiClientBaseUrl = @"https://api.twitter.com/1.1
         @strongify(self);
         NSString *statusesShowEndpoint = [kTwitterApiClientBaseUrl stringByAppendingString:@"statuses/home_timeline.json"];
         NSError *clientError;
-        NSURLRequest *request = [self.client URLRequestWithMethod:@"GET" URL:statusesShowEndpoint parameters:nil error:&clientError];
+        NSURLRequest *request = [self.client URLRequestWithMethod:@"GET" URL:statusesShowEndpoint parameters:@{@"count": @"3"} error:&clientError];
         if (!request) {
             [subscriber sendError:clientError];
             return nil;
@@ -86,10 +86,12 @@ static NSString * const kTwitterApiClientBaseUrl = @"https://api.twitter.com/1.1
 }
 
 - (RACSignal *)createTweet:(NSString *)tweet {
+    NSInteger idx = (NSInteger)[NSDate date].timeIntervalSince1970;
+    
     id fakeJsonTweet = @{
          @"text": tweet,
-         @"id" : @793988224217653253,
-         @"id_str" :@"793988224217653253",
+         @"id" : @(idx),
+         @"id_str" : [NSString stringWithFormat:@"%ld", (long)idx],
          
          @"source" :@"<a href=\"http:\/\/www.google.com\/\" rel=\"nofollow\">Google<\/a>",
          @"truncated" : @NO,

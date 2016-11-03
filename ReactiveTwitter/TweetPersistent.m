@@ -15,6 +15,12 @@
 
 @implementation TweetPersistent
 
++ (NSString *)primaryKey
+{
+    return @"idx";
+}
+
+
 + (instancetype)tweetWithId:(NSString *)idx text:(NSString *)text {
     TweetPersistent *tweet = [self new];
     tweet.idx = idx;
