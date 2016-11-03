@@ -13,7 +13,7 @@
 @implementation StorageService
 
 - (RACSignal *)saveTweets:(NSArray *)tweets {
-    return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         NSError *realmError;
         RLMRealm *realm = [RLMRealm defaultRealm];
         BOOL sucsess = [realm transactionWithBlock:^{
@@ -33,8 +33,7 @@
                 [realm cancelWriteTransaction];
             }
         }];;
-    }]
-    deliverOn:[RACScheduler mainThreadScheduler]];
+    }];
 }
 
 - (RACSignal *)loadTweets {

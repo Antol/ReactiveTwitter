@@ -44,7 +44,6 @@ static NSString * const kTweetsListVCToTweetVC = @"toTweetVC";
 
 - (RACSignal *)loadData {
     @weakify(self);
-    RACScheduler *scheduler = [RACScheduler scheduler];
     return [[[[[[[[[[[[self.twitterApiClient
         login]
         then:^RACSignal *{
@@ -52,7 +51,7 @@ static NSString * const kTweetsListVCToTweetVC = @"toTweetVC";
             return [self.twitterApiClient loadTimeline];
         }]
         flattenMap:^RACStream *(NSArray<TWTRTweet *> *x) {
-            return [x.rac_sequence signalWithScheduler:scheduler];
+            return [x.rac_sequence signalWithScheduler:[RACScheduler mainThreadScheduler]];
         }]
         map:^id(TWTRTweet *tweet) {
             return [TweetPersistent tweetWithId:tweet.tweetID text:tweet.text];
@@ -67,7 +66,7 @@ static NSString * const kTweetsListVCToTweetVC = @"toTweetVC";
             return [self.storageService loadTweets];
         }]
         flattenMap:^RACStream *(NSArray<TweetPersistent *> *x) {
-            return [x.rac_sequence signalWithScheduler:scheduler];
+            return [x.rac_sequence signalWithScheduler:[RACScheduler mainThreadScheduler]];
         }]
         map:^id(TweetPersistent *value) {
             return value.text;
