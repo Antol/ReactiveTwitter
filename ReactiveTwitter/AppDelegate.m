@@ -29,7 +29,9 @@
 }
 
 - (void)injection {
-    TweetsListVC *rootVC = (id)self.window.rootViewController;
+    UINavigationController *navigationVC = (id)self.window.rootViewController;
+    NSAssert([navigationVC isKindOfClass:[UINavigationController class]], @"[navigationVC isKindOfClass:[UINavigationController class]]");
+    TweetsListVC *rootVC = (id)navigationVC.viewControllers.firstObject;
     NSAssert([rootVC isKindOfClass:[TweetsListVC class]], @"[rootVC isKindOfClass:[TweetsListVC class]]");
     
     TweetsListLogic *rootLogic = [TweetsListLogic new];

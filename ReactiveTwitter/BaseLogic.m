@@ -9,8 +9,9 @@
 #import "BaseLogic.h"
 
 @interface BaseLogic ()
-@property (nonatomic, strong) RACCommand *loadDataCommand;
 @property (nonatomic, assign) BOOL isDataLoaded;
+@property (nonatomic, strong) RACCommand *loadDataCommand;
+@property (nonatomic, strong) RACSubject *performedSegues;
 @end
 
 @implementation BaseLogic
@@ -21,6 +22,7 @@
     if (self) {
         self.isDataLoaded = NO;
         self.loadDataCommand = [self createLoadDataCommand];
+        self.performedSegues = [RACSubject subject];
     }
     return self;
 }
@@ -47,6 +49,10 @@
             self.isDataLoaded = YES;
         }];
     }];
+}
+
+- (void)performSegueWithIdentifier:(NSString *)segue logic:(BaseLogic *)logic {
+    [self.performedSegues sendNext:RACTuplePack(segue, logic)];
 }
 
 @end

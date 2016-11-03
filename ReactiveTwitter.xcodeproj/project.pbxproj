@@ -22,6 +22,8 @@
 		5A9E1D6A1DCA6E7300318F48 /* UIView+PMNibManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1D691DCA6E7300318F48 /* UIView+PMNibManagement.m */; };
 		5A9E1D6E1DCA75EB00318F48 /* TweetPersistent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1D6D1DCA75EB00318F48 /* TweetPersistent.m */; };
 		5A9E1D711DCA771200318F48 /* StorageService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1D701DCA771200318F48 /* StorageService.m */; };
+		5A9E1D741DCAC1FC00318F48 /* TweetVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1D731DCAC1FC00318F48 /* TweetVC.m */; };
+		5A9E1D771DCAC21400318F48 /* TweetLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1D761DCAC21400318F48 /* TweetLogic.m */; };
 		BF8E376A7D70A84E051EDA21 /* libPods-ReactiveTwitter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BAF3DFA841E64D4B3F1CAD7 /* libPods-ReactiveTwitter.a */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +39,7 @@
 		5A92C8201DC90632006F5540 /* TweetsListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TweetsListVC.h; sourceTree = "<group>"; };
 		5A92C8211DC90632006F5540 /* TweetsListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TweetsListVC.m; sourceTree = "<group>"; };
 		5A92C8241DC90632006F5540 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5A92C8261DC90632006F5540 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ReactiveTwitter/Assets.xcassets; sourceTree = "<group>"; };
+		5A92C8261DC90632006F5540 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A92C8291DC90632006F5540 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A92C82B1DC90632006F5540 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A9E1D581DCA5F9F00318F48 /* TweetsListLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetsListLogic.h; sourceTree = "<group>"; };
@@ -55,6 +57,10 @@
 		5A9E1D6D1DCA75EB00318F48 /* TweetPersistent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetPersistent.m; sourceTree = "<group>"; };
 		5A9E1D6F1DCA771200318F48 /* StorageService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageService.h; sourceTree = "<group>"; };
 		5A9E1D701DCA771200318F48 /* StorageService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageService.m; sourceTree = "<group>"; };
+		5A9E1D721DCAC1FC00318F48 /* TweetVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetVC.h; sourceTree = "<group>"; };
+		5A9E1D731DCAC1FC00318F48 /* TweetVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetVC.m; sourceTree = "<group>"; };
+		5A9E1D751DCAC21400318F48 /* TweetLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetLogic.h; sourceTree = "<group>"; };
+		5A9E1D761DCAC21400318F48 /* TweetLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetLogic.m; sourceTree = "<group>"; };
 		9BAF3DFA841E64D4B3F1CAD7 /* libPods-ReactiveTwitter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactiveTwitter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -83,9 +89,10 @@
 			children = (
 				5A9E1D5E1DCA606400318F48 /* BaseVC.h */,
 				5A9E1D5F1DCA606400318F48 /* BaseVC.m */,
-				5A92C8231DC90632006F5540 /* Main.storyboard */,
 				5A92C8201DC90632006F5540 /* TweetsListVC.h */,
 				5A92C8211DC90632006F5540 /* TweetsListVC.m */,
+				5A9E1D721DCAC1FC00318F48 /* TweetVC.h */,
+				5A9E1D731DCAC1FC00318F48 /* TweetVC.m */,
 			);
 			name = VIewControllers;
 			sourceTree = "<group>";
@@ -105,7 +112,6 @@
 			isa = PBXGroup;
 			children = (
 				5A92C8191DC90632006F5540 /* ReactiveTwitter */,
-				5A92C8261DC90632006F5540 /* Assets.xcassets */,
 				5A92C8181DC90632006F5540 /* Products */,
 				FF9FF5F29E60AE2715993954 /* Pods */,
 				2D4B907F75A3E4FE7B353FB4 /* Frameworks */,
@@ -130,6 +136,7 @@
 				5A9E1D611DCA6DD200318F48 /* Views */,
 				5A9E1D671DCA6E4D00318F48 /* Helpers */,
 				5A92C81A1DC90632006F5540 /* Supporting Files */,
+				5A92C8261DC90632006F5540 /* Assets.xcassets */,
 			);
 			path = ReactiveTwitter;
 			sourceTree = "<group>";
@@ -153,6 +160,8 @@
 				5A9E1D5C1DCA603500318F48 /* BaseLogic.m */,
 				5A9E1D581DCA5F9F00318F48 /* TweetsListLogic.h */,
 				5A9E1D591DCA5F9F00318F48 /* TweetsListLogic.m */,
+				5A9E1D751DCAC21400318F48 /* TweetLogic.h */,
+				5A9E1D761DCAC21400318F48 /* TweetLogic.m */,
 			);
 			name = Logics;
 			sourceTree = "<group>";
@@ -160,6 +169,7 @@
 		5A9E1D611DCA6DD200318F48 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5A92C8231DC90632006F5540 /* Main.storyboard */,
 				5A9E1D621DCA6DFD00318F48 /* LoadingView.h */,
 				5A9E1D631DCA6DFD00318F48 /* LoadingView.m */,
 				5A9E1D651DCA6E0900318F48 /* LoadingView.xib */,
@@ -338,9 +348,11 @@
 				5A9E1D711DCA771200318F48 /* StorageService.m in Sources */,
 				5A92C81F1DC90632006F5540 /* AppDelegate.m in Sources */,
 				5A9E1D6E1DCA75EB00318F48 /* TweetPersistent.m in Sources */,
+				5A9E1D741DCAC1FC00318F48 /* TweetVC.m in Sources */,
 				5A0552FC1DCA58D100D99C45 /* TwitterApiClient.m in Sources */,
 				5A9E1D5D1DCA603500318F48 /* BaseLogic.m in Sources */,
 				5A9E1D6A1DCA6E7300318F48 /* UIView+PMNibManagement.m in Sources */,
+				5A9E1D771DCAC21400318F48 /* TweetLogic.m in Sources */,
 				5A9E1D5A1DCA5F9F00318F48 /* TweetsListLogic.m in Sources */,
 				5A92C81C1DC90632006F5540 /* main.m in Sources */,
 			);

@@ -56,6 +56,18 @@
             }];
         }
     }];
+    
+    [self.logic.performedSegues subscribeNext:^(RACTuple *x) {
+        @strongify(self);
+        [self performSegueWithIdentifier:x.first sender:x.second];
+    }];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(BaseLogic *)logic {
+    if ([segue.destinationViewController isKindOfClass:[BaseVC class]] && logic) {
+        BaseVC *destinationVC = segue.destinationViewController;
+        destinationVC.logic = logic;
+    }
 }
 
 @end

@@ -11,12 +11,26 @@
 #import <TwitterKit/TwitterKit.h>
 #import "StorageService.h"
 #import "TweetPersistent.h"
+#import "TweetLogic.h"
+
+static NSString * const kTweetsListVCToTweetVC = @"toTweetVC";
 
 @interface TweetsListLogic ()
 @property (nonatomic, copy) NSArray *tweets;
+@property (nonatomic, strong) RACCommand *selectTweetCommand;
 @end
 
 @implementation TweetsListLogic
+
+- (void)startLogic {
+    [super startLogic];
+    @weakify(self);
+    self.selectTweetCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(NSString *tweet) {
+        @strongify(self);
+        [self performSegueWithIdentifier:kTweetsListVCToTweetVC logic:[TweetLogic logicWithText:tweet]];
+        return [RACSignal empty];
+    }];
+}
 
 - (RACSignal *)loadData {
     @weakify(self);

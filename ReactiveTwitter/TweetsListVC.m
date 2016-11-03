@@ -37,6 +37,8 @@ static NSString * const kTweetCellReuseId = @"TweetCell";
     }];
 }
 
+#pragma mark - UITableView
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.tweets.count;
 }
@@ -46,6 +48,11 @@ static NSString * const kTweetCellReuseId = @"TweetCell";
                                                             forIndexPath:indexPath];
     cell.textLabel.text = self.tweets[indexPath.row];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *tweetText = self.tweets[indexPath.row];
+    [self.logic.selectTweetCommand execute:tweetText];
 }
 
 @end

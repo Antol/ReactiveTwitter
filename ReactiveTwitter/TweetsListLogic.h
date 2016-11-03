@@ -16,4 +16,5 @@
 @property (nonatomic, strong) StorageService *storageService;
 
 @property (nonatomic, copy, readonly) NSArray *tweets;
+@property (nonatomic, strong, readonly) RACCommand *selectTweetCommand;
 @end
