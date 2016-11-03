@@ -24,9 +24,33 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tWJ-d4-esS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="pCm-JX-KaM">
+                                    <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fzB-TY-eYx">
+                                            <rect key="frame" x="10" y="7" width="293" height="30"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bd8-eS-6ev">
+                                            <rect key="frame" x="318" y="7" width="42" height="30"/>
+                                            <state key="normal" title="Tweet"/>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="fzB-TY-eYx" firstAttribute="centerY" secondItem="pCm-JX-KaM" secondAttribute="centerY" id="9Jk-Ex-LVg"/>
+                                        <constraint firstItem="Bd8-eS-6ev" firstAttribute="leading" secondItem="fzB-TY-eYx" secondAttribute="trailing" constant="15" id="Hvu-Se-P1j"/>
+                                        <constraint firstItem="fzB-TY-eYx" firstAttribute="leading" secondItem="pCm-JX-KaM" secondAttribute="leading" constant="10" id="dj0-RP-j1C"/>
+                                        <constraint firstItem="Bd8-eS-6ev" firstAttribute="centerY" secondItem="pCm-JX-KaM" secondAttribute="centerY" id="uBJ-Jt-EBZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="Bd8-eS-6ev" secondAttribute="trailing" constant="15" id="yvo-NE-DfZ"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" textLabel="cdG-82-mZN" style="IBUITableViewCellStyleDefault" id="H1R-Ce-tWj">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H1R-Ce-tWj" id="D4u-6h-Ub4">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -60,6 +84,8 @@
                     <navigationItem key="navigationItem" id="HyX-Ot-QLT"/>
                     <connections>
                         <outlet property="tableView" destination="tWJ-d4-esS" id="7ia-hL-bgd"/>
+                        <outlet property="tweetButton" destination="Bd8-eS-6ev" id="zkw-Hq-7ay"/>
+                        <outlet property="tweetTextField" destination="fzB-TY-eYx" id="ha6-9N-aRe"/>
                         <segue destination="KKn-Ki-EdF" kind="show" identifier="toTweetVC" id="CGa-YZ-oxU"/>
                     </connections>
                 </viewController>

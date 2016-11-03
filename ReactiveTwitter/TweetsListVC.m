@@ -9,12 +9,15 @@
 #import "TweetsListVC.h"
 #import "ReactiveCocoa.h"
 #import "TweetsListLogic.h"
+#import "UITextField+RACChannelTerminal.h"
 
 static NSString * const kTweetCellReuseId = @"TweetCell";
 
 @interface TweetsListVC () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) TweetsListLogic *logic;
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, weak) IBOutlet UITextField *tweetTextField;
+@property (nonatomic, weak) IBOutlet UIButton *tweetButton;
 @property (nonatomic, copy) NSArray *tweets;
 @end
 
@@ -35,6 +38,10 @@ static NSString * const kTweetCellReuseId = @"TweetCell";
         @strongify(self);
         [self.tableView reloadData];
     }];
+    
+    [self.tweetTextField establishChannelToTextWithTerminal:self.logic.tweetTerminal];
+    
+    self.tweetButton.rac_command = self.logic.createTweetCommand;
 }
 
 #pragma mark - UITableView

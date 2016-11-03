@@ -17,4 +17,6 @@
 
 @property (nonatomic, copy, readonly) NSArray *tweets;
 @property (nonatomic, strong, readonly) RACCommand *selectTweetCommand;
+@property (nonatomic, strong, readonly) RACCommand *createTweetCommand;
+@property (nonatomic, strong, readonly) RACChannelTerminal *tweetTerminal;
 @end

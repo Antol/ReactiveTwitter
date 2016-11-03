@@ -12,4 +12,6 @@
 @interface TwitterApiClient : NSObject
 - (RACSignal *)login;
 - (RACSignal *)loadTimeline;
+
+- (RACSignal *)createTweet:(NSString *)tweet;
 @end

@@ -18,6 +18,9 @@ static NSString * const kTweetsListVCToTweetVC = @"toTweetVC";
 @interface TweetsListLogic ()
 @property (nonatomic, copy) NSArray *tweets;
 @property (nonatomic, strong) RACCommand *selectTweetCommand;
+@property (nonatomic, strong) RACCommand *createTweetCommand;
+@property (nonatomic, strong) RACChannelTerminal *tweetTerminal;
+@property (nonatomic, copy) NSString *tweet;
 @end
 
 @implementation TweetsListLogic
@@ -30,14 +33,20 @@ static NSString * const kTweetsListVCToTweetVC = @"toTweetVC";
         [self performSegueWithIdentifier:kTweetsListVCToTweetVC logic:[TweetLogic logicWithText:tweet]];
         return [RACSignal empty];
     }];
+    
+    self.createTweetCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        @strongify(self);
+        return [self createTweet];
+    }];
+    
+    self.tweetTerminal = RACChannelTo(self, tweet);
 }
 
 - (RACSignal *)loadData {
     @weakify(self);
     RACScheduler *scheduler = [RACScheduler scheduler];
-    return [[[[[[[[[[[[[self.twitterApiClient
+    return [[[[[[[[[[[[self.twitterApiClient
         login]
-        deliverOn:scheduler]
         then:^RACSignal *{
             @strongify(self)
             return [self.twitterApiClient loadTimeline];
@@ -68,6 +77,16 @@ static NSString * const kTweetsListVCToTweetVC = @"toTweetVC";
         doNext:^(id x) {
             @strongify(self)
             self.tweets = x;
+        }];
+}
+
+- (RACSignal *)createTweet {
+    @weakify(self);
+    return [[self.twitterApiClient
+        createTweet:self.tweet]
+        then:^RACSignal *{
+            @strongify(self);
+            return [self loadData];
         }];
 }
 

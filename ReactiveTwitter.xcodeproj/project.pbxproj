@@ -24,6 +24,7 @@
 		5A9E1D711DCA771200318F48 /* StorageService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1D701DCA771200318F48 /* StorageService.m */; };
 		5A9E1D741DCAC1FC00318F48 /* TweetVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1D731DCAC1FC00318F48 /* TweetVC.m */; };
 		5A9E1D771DCAC21400318F48 /* TweetLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1D761DCAC21400318F48 /* TweetLogic.m */; };
+		5A9E1D7A1DCADA2300318F48 /* UITextField+RACChannelTerminal.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1D791DCADA2300318F48 /* UITextField+RACChannelTerminal.m */; };
 		BF8E376A7D70A84E051EDA21 /* libPods-ReactiveTwitter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BAF3DFA841E64D4B3F1CAD7 /* libPods-ReactiveTwitter.a */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,8 @@
 		5A9E1D731DCAC1FC00318F48 /* TweetVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetVC.m; sourceTree = "<group>"; };
 		5A9E1D751DCAC21400318F48 /* TweetLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetLogic.h; sourceTree = "<group>"; };
 		5A9E1D761DCAC21400318F48 /* TweetLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetLogic.m; sourceTree = "<group>"; };
+		5A9E1D781DCADA2300318F48 /* UITextField+RACChannelTerminal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+RACChannelTerminal.h"; sourceTree = "<group>"; };
+		5A9E1D791DCADA2300318F48 /* UITextField+RACChannelTerminal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+RACChannelTerminal.m"; sourceTree = "<group>"; };
 		9BAF3DFA841E64D4B3F1CAD7 /* libPods-ReactiveTwitter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactiveTwitter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -182,6 +185,8 @@
 			children = (
 				5A9E1D681DCA6E7300318F48 /* UIView+PMNibManagement.h */,
 				5A9E1D691DCA6E7300318F48 /* UIView+PMNibManagement.m */,
+				5A9E1D781DCADA2300318F48 /* UITextField+RACChannelTerminal.h */,
+				5A9E1D791DCADA2300318F48 /* UITextField+RACChannelTerminal.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -354,6 +359,7 @@
 				5A9E1D6A1DCA6E7300318F48 /* UIView+PMNibManagement.m in Sources */,
 				5A9E1D771DCAC21400318F48 /* TweetLogic.m in Sources */,
 				5A9E1D5A1DCA5F9F00318F48 /* TweetsListLogic.m in Sources */,
+				5A9E1D7A1DCADA2300318F48 /* UITextField+RACChannelTerminal.m in Sources */,
 				5A92C81C1DC90632006F5540 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
