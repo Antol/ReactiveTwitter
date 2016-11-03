@@ -35,27 +35,41 @@
 
 - (void)setupUI {
     self.loadingView = [LoadingView viewFromNib];
+    [self.view addSubview:self.loadingView];
+    [self.loadingView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
 }
 
 - (void)bindUIWithLogics {
     @weakify(self);
-    [[self.logic.loadDataCommand.executing skip:1] subscribeNext:^(id x) {
-        @strongify(self);
-        if ([x boolValue]) {
-            [self.view addSubview:self.loadingView];
-            [self.loadingView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.edges.equalTo(self.view);
-            }];
-        }
-        else {
-            [UIView animateWithDuration:0.3 animations:^{
-                self.loadingView.alpha = 0;
-            } completion:^(BOOL finished) {
-                self.loadingView.alpha = 1;
-                [self.loadingView removeFromSuperview];
-            }];
-        }
-    }];
+    
+    RACSignal *shouldShowLoadingSignal = [RACObserve(self.logic, showLoadingView) distinctUntilChanged];
+    RACSignal *executingSignal = [[[self.logic.loadDataCommand.executing skip:1] startWith:@YES] distinctUntilChanged];
+    [[RACSignal
+        combineLatest:@[executingSignal, shouldShowLoadingSignal]]
+        subscribeNext:^(RACTuple *x) {
+            @strongify(self);
+            BOOL executing = [x.first boolValue];
+            BOOL shouldShow = [x.second boolValue];
+            
+            if (shouldShow) {
+                if (executing) {
+                    self.loadingView.hidden = NO;
+                }
+                else {
+                    [UIView animateWithDuration:0.3 animations:^{
+                        self.loadingView.alpha = 0;
+                    } completion:^(BOOL finished) {
+                        self.loadingView.alpha = 1;
+                        self.loadingView.hidden = YES;
+                    }];
+                }
+            }
+            else {
+                self.loadingView.hidden = YES;
+            }
+        }];
     
     [self.logic.performedSegues subscribeNext:^(RACTuple *x) {
         @strongify(self);

@@ -9,20 +9,19 @@
 #import "BaseLogic.h"
 
 @interface BaseLogic ()
-@property (nonatomic, assign) BOOL isDataLoaded;
 @property (nonatomic, strong) RACCommand *loadDataCommand;
 @property (nonatomic, strong) RACSubject *performedSegues;
+@property (nonatomic, assign) BOOL showLoadingView;
 @end
 
 @implementation BaseLogic
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
-        self.isDataLoaded = NO;
         self.loadDataCommand = [self createLoadDataCommand];
         self.performedSegues = [RACSubject subject];
+        self.showLoadingView = YES;
     }
     return self;
 }
@@ -44,10 +43,7 @@
     @weakify(self);
     return [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
         @strongify(self);
-        return [[self loadData]  doCompleted:^{
-            @strongify(self);
-            self.isDataLoaded = YES;
-        }];
+        return [self loadData];
     }];
 }
 

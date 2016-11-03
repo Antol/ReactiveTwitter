@@ -10,14 +10,21 @@
 
 @interface TweetLogic ()
 @property (nonatomic, copy) NSString *tweetText;
+@property (nonatomic, assign) BOOL showLoadingView;
 @end
 
 @implementation TweetLogic
+@dynamic showLoadingView;
 
 + (instancetype)logicWithText:(NSString *)text {
     TweetLogic *logic = [self new];
     logic.tweetText = text;
     return logic;
+}
+
+- (void)startLogic {
+    [super startLogic];
+    self.showLoadingView = NO;
 }
 
 @end
